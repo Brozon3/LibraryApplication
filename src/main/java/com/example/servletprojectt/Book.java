@@ -1,7 +1,6 @@
 package com.example.servletprojectt;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Book {
     private final String ISBN;
@@ -29,6 +28,10 @@ public class Book {
     public String getISBN() { return ISBN; }
 
     public String getTitle() { return title; }
+
+    public int getEditionNumber() { return editionNumber; }
+
+    public int getCopyright() { return copyright; }
 
     public String getAuthorList() {
         StringBuilder authors = new StringBuilder();

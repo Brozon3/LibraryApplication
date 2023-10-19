@@ -22,7 +22,7 @@ public class BookCollectionServlet extends HttpServlet {
                       HttpServletResponse response) throws IOException, ServletException {
 
         LinkedList<Book> bookList = new LinkedList<Book>();
-        try (Connection conn = DatabaseConnection.getBooksDatabaseConnection()){
+        try (Connection conn = DatabaseConnection.initDatabase()){
             Statement statement = conn.createStatement();
             String sqlQuery = "SELECT * from titles";
             ResultSet resultSet = statement.executeQuery(sqlQuery);

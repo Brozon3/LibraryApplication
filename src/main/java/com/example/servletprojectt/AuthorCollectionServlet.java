@@ -21,7 +21,7 @@ public class AuthorCollectionServlet extends HttpServlet {
                       HttpServletResponse response) throws IOException, ServletException {
 
         LinkedList<Author> authorList = new LinkedList<Author>();
-        try (Connection conn = DatabaseConnection.getBooksDatabaseConnection()){
+        try (Connection conn = DatabaseConnection.initDatabase()){
             Statement statement = conn.createStatement();
             String sqlQuery = "SELECT * from authors";
             ResultSet resultSet = statement.executeQuery(sqlQuery);

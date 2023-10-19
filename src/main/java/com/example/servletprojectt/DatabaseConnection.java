@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    public static Connection getBooksDatabaseConnection() throws SQLException {
+    public static Connection initDatabase() throws SQLException {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
         } catch( ClassNotFoundException ex) {

@@ -23,7 +23,7 @@ public class AddBookServlet {
 
         PrintWriter out = response.getWriter();
 
-        try (Connection conn = DatabaseConnection.getBooksDatabaseConnection()){
+        try (Connection conn = DatabaseConnection.initDatabase()){
 
             PreparedStatement preparedStatement = conn.prepareStatement(
                     "INSERT INTO bicycles(isbn, title, editionNumber, copyright) VALUES (?, ?, ?, ?)");
