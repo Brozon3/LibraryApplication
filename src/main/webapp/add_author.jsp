@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+    <head>
+        <title>Add an Author</title>
+    </head>
+    <body>
+        <h1><%= "Add an Author" %></h1>
+    </body>
 </html>
