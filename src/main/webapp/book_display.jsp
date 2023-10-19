@@ -15,10 +15,11 @@
         <% LinkedList<Book> bookList = (LinkedList<Book>) request.getAttribute("bookList");
             for( Book b: bookList) {
                 out.println("<h2> Title:" + b.getTitle() + "</h2>");
-                out.println("<h3> ISBN:" + b.getISBN() + "</h3>");
-                out.println("<h3> Authors:" + "</h3>");
+                out.println("<p> ISBN:" + b.getISBN() + "</p>");
+                out.println("<p> Authors:" + "</p>");
                 out.println("<br>");
             }
         %>
+        <a href="index.jsp">Home</a>
     </body>
 </html>

@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title>Add an Author</title>
+        <title>Pat's Library: Add an Author</title>
     </head>
     <body>
         <h1><%= "Add an Author" %></h1>
+        <form action="AddAuthor" method="Post">
+            <label for="firstName">First Name: </label>
+            <input type="text" id="firstName">
+            <br>
+            <label for="lastName">Last Name: </label>
+            <input type="text" id="lastName">
+        </form>
+        <a href="index.jsp">Home</a>
     </body>
 </html>

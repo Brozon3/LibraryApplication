@@ -12,5 +12,19 @@
     </head>
     <body>
         <h1><%= "Add a Book" %></h1>
+        <form action="AddBook" method="Post">
+            <label for="title">Title: </label>
+            <input type="text" id="title">
+            <br>
+            <label for="isbn">ISBN: </label>
+            <input type="text" id="isbn">
+            <br>
+            <label for="edition">Edition #: </label>
+            <input type="number" id="edition">
+            <br>
+            <label for="copyright">Copyright Year: </label>
+            <input type="text" id="copyright">
+        </form>
+        <a href="index.jsp">Home</a>
     </body>
 </html>

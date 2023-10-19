@@ -29,10 +29,6 @@ public class BookCollectionServlet extends HttpServlet {
 
             while( resultSet.next()) {
                 bookList.add( new Book(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4)));
-                System.out.println(resultSet.getString(1));
-                System.out.println(resultSet.getString(2));
-                System.out.println(resultSet.getInt(3));
-                System.out.println(resultSet.getInt(4));
             }
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("book_display.jsp");
             request.setAttribute("bookList", bookList);
