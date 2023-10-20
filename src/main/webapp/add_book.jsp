@@ -29,7 +29,7 @@
                         <a class="nav-link" href="add_book.jsp">Add a Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add_author.jsp">Add a Book</a>
+                        <a class="nav-link" href="add_author.jsp">Add an Author</a>
                     </li>
                 </ul>
             </div>
@@ -37,23 +37,39 @@
         <div class="container justify-content-md-center">
             <h1><%= "Add a Book" %></h1>
             <form action="AddBook" method="Post">
-                <label for="title">Title: </label>
-                <input type="text" id="title">
-                <br>
-                <label for="isbn">ISBN: </label>
-                <input type="text" id="isbn">
-                <br>
-                <label for="edition">Edition #: </label>
-                <input type="number" id="edition">
-                <br>
-                <label for="copyright">Copyright Year: </label>
-                <input type="text" id="copyright">
-                <br>
-                <button type="submit">Submit</button>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="title">Title: </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="The Best Book Ever" aria-label="Title" aria-describedby="title">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="isbn">ISBN: </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="0123456789" aria-label="ISBN" aria-describedby="isbn">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="edition">Edition #: </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="1" aria-label="edition" aria-describedby="edition">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="copyright">Copyright Year: </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="2000" aria-label="copyright" aria-describedby="copyright">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-        <div class="container justify-content-md-center">
-            <a href="#top">Back to Top</a>
+        <div class="container justify-content-md-center fixed-bottom">
             <p>Designed by: Pat Broders</p>
         </div>
     </body>

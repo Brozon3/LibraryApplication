@@ -29,7 +29,7 @@
                         <a class="nav-link" href="add_book.jsp">Add a Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add_author.jsp">Add a Book</a>
+                        <a class="nav-link" href="add_author.jsp">Add an Author</a>
                     </li>
                 </ul>
             </div>
@@ -37,17 +37,25 @@
         <div class="container justify-content-md-center">
             <h1><%= "Add an Author" %></h1>
             <form action="AddAuthor" method="Post">
-                <label for="firstName">First Name: </label>
-                <input type="text" id="firstName">
-                <br>
-                <label for="lastName">Last Name: </label>
-                <input type="text" id="lastName">
-                <br>
-                <button type="submit">Submit</button>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="firstName">First Name:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Joe" aria-label="First Name" aria-describedby="firstName">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="lastName">Last Name:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Blow" aria-label="Last Name" aria-describedby="lastName">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-        <div class="container justify-content-md-center">
-            <a href="#top">Back to Top</a>
+        <div class="container justify-content-md-center fixed-bottom">
             <p>Designed by: Pat Broders</p>
         </div>
     </body>

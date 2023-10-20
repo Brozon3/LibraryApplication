@@ -31,7 +31,7 @@
                         <a class="nav-link" href="add_book.jsp">Add a Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add_author.jsp">Add a Book</a>
+                        <a class="nav-link" href="add_author.jsp">Add an Author</a>
                     </li>
                 </ul>
             </div>
@@ -46,9 +46,12 @@
                 out.println("<br>");
             }
         %>
-        <div class="container justify-content-md-center">
-            <a href="#top">Back to Top</a>
-            <p>Designed by: Pat Broders</p>
+        <br>
+        <br>
+        <br>
+        <div class="container bg-light justify-content-md-center fixed-bottom">
+            <a href="#top" class="btn btn-primary m-3">Back to Top</a>
+            <span>Designed by: Pat Broders</span>
         </div>
     </body>
 </html>

@@ -12,7 +12,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light container justify-content-md-center mb-3">
-            <a class="navbar-brand" href="#" id="top">Pat's Library</a>
+            <span class="navbar-brand" id="top">Pat's Library</span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,7 +31,7 @@
                         <a class="nav-link" href="add_book.jsp">Add a Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add_author.jsp">Add a Book</a>
+                        <a class="nav-link" href="add_author.jsp">Add an Author</a>
                     </li>
                 </ul>
             </div>
@@ -40,7 +40,7 @@
             for( Book b: bookList) {
                 out.println("<div class='container justify-content-md-center border border-primary'>");
                 out.println("<h2> Title: " + b.getTitle() + "</h2>");
-                out.println("<p> Edition Number:" + b.getEditionNumber() + "</p>");
+                out.println("<p> Edition Number: " + b.getEditionNumber() + "</p>");
                 out.println("<p> ISBN: " + b.getISBN() + "</p>");
                 out.println("<p> Copyright: " + b.getCopyright() + "</p>");
                 out.println("<p> Authors: " + "</p>");
@@ -48,9 +48,12 @@
                 out.println("<br>");
             }
         %>
-        <div class="container justify-content-md-center">
-            <a href="#top">Back to Top</a>
-            <p>Designed by: Pat Broders</p>
+        <br>
+        <br>
+        <br>
+        <div class="container bg-light justify-content-md-center fixed-bottom">
+            <a href="#top" class="btn btn-primary m-3">Back to Top</a>
+            <span>Designed by: Pat Broders</span>
         </div>
     </body>
 </html>

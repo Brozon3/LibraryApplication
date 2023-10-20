@@ -30,7 +30,7 @@
                         <a class="nav-link" href="add_book.jsp">Add a Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add_author.jsp">Add a Book</a>
+                        <a class="nav-link" href="add_author.jsp">Add an Author</a>
                     </li>
                 </ul>
             </div>
@@ -41,8 +41,7 @@
             <p>This library contains books that are near and dear to my heart. Feel free to use the
                 links to add books and authors of your own to collection! </p>
         </div>
-        <div class="container justify-content-md-center">
-            <a href="#top">Back to Top</a>
+        <div class="container justify-content-md-center fixed-bottom">
             <p>Designed by: Pat Broders</p>
         </div>
     </body>
