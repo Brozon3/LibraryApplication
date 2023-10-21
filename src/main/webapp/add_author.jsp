@@ -42,14 +42,14 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="firstName">First Name:</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Joe" aria-label="First Name" aria-describedby="firstName">
+                    <input type="text" name="firstName" class="form-control" placeholder="Joe" aria-label="First Name" aria-describedby="firstName">
                 </div>
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="lastName">Last Name:</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Blow" aria-label="Last Name" aria-describedby="lastName">
+                    <input type="text" name="lastName" class="form-control" placeholder="Blow" aria-label="Last Name" aria-describedby="lastName">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

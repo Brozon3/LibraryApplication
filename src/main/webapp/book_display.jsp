@@ -12,7 +12,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light container justify-content-md-center mb-3">
-            <span class="navbar-brand" id="top">Pat's Library</span>
+            <a class="navbar-brand" id="top">Pat's Library</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
