@@ -29,11 +29,11 @@ public class Author {
 
     public String getBookList() {
 
-        StringBuilder books = new StringBuilder("\n- ");
+        StringBuilder books = new StringBuilder();
         for (Book b: this.bookList){
-            books.append(b.getTitle()).append("\n- ");
+            books.append(b.getTitle()).append(" || ");
         }
-        return books.substring(0, books.length() - 3);
+        return books.substring(0, books.length() - 4);
     }
 
     public void addBook(Book book){

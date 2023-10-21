@@ -13,16 +13,18 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light container justify-content-md-center mb-3">
             <a class="navbar-brand" id="top">Pat's Library</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.jsp">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="BookCollection">View Books</a>
+                        <a class="nav-link" href="BookCollection">View Books
+                            <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="AuthorCollection">View Authors</a>
@@ -43,7 +45,7 @@
                 out.println("<p> Edition Number: " + b.getEditionNumber() + "</p>");
                 out.println("<p> ISBN: " + b.getISBN() + "</p>");
                 out.println("<p> Copyright: " + b.getCopyright() + "</p>");
-                out.println("<p> Authors: " + "</p>");
+                out.println("<p> Authors: " + b.getAuthorList() + "</p>");
                 out.println("</div>");
                 out.println("<br>");
             }

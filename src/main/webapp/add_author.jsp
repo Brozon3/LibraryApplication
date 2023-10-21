@@ -11,13 +11,14 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light container justify-content-md-center mb-3">
             <a class="navbar-brand" href="#" id="top">Pat's Library</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.jsp">Home </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="BookCollection">View Books</a>
@@ -29,7 +30,8 @@
                         <a class="nav-link" href="add_book.jsp">Add a Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add_author.jsp">Add an Author</a>
+                        <a class="nav-link" href="add_author.jsp">Add an Author
+                            <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -42,14 +44,16 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="firstName">First Name:</span>
                     </div>
-                    <input type="text" name="firstName" class="form-control" placeholder="Joe" aria-label="First Name" aria-describedby="firstName">
+                    <input type="text" name="firstName" class="form-control" placeholder="Joe"
+                           aria-label="First Name" aria-describedby="firstName" required="required">
                 </div>
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="lastName">Last Name:</span>
                     </div>
-                    <input type="text" name="lastName" class="form-control" placeholder="Blow" aria-label="Last Name" aria-describedby="lastName">
+                    <input type="text" name="lastName" class="form-control" placeholder="Blow"
+                           aria-label="Last Name" aria-describedby="lastName" required="required">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

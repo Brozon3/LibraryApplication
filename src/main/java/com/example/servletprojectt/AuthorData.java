@@ -59,8 +59,24 @@ public class AuthorData extends HttpServlet {
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
             while( resultSet.next()) {
-                authorList.add( new Author(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3)));
+                authorList.add( new Author(resultSet.getInt(1), resultSet.getString(2),
+                                            resultSet.getString(3)));
             }
+
+            for (Author a: authorList){
+                PreparedStatement authorStatement = conn.prepareStatement(
+                        "SELECT * FROM authorisbn " +
+                                "INNER JOIN titles ON authorisbn.isbn = titles.isbn " +
+                                "WHERE authorID = (?)");
+                authorStatement.setInt(1, a.getAuthorID());
+                ResultSet books = authorStatement.executeQuery();
+
+                while (books.next()) {
+                    a.addBook(new Book(books.getString("titles.isbn"), books.getString("title"), books.getInt("editionNumber"), Integer.parseInt(books.getString("copyright"))));
+                }
+
+            }
+
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("author_display.jsp");
             request.setAttribute("authorList", authorList);
             requestDispatcher.forward(request, response);
