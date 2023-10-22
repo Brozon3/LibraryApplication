@@ -27,7 +27,7 @@
                     </div>
                     <input type="text" name="isbn" class="form-control" placeholder="0123456789"
                            aria-label="ISBN" aria-describedby="isbn" required="required"
-                           pattern="[0-9]{9}" oninvalid="alert('ISBN must be 9 digits.')">
+                           pattern="[0-9]{10}" oninvalid="alert('ISBN must be 9 digits.')">
                 </div>
 
                 <div class="input-group mb-3">

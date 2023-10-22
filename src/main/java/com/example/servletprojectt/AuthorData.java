@@ -41,7 +41,6 @@ public class AuthorData extends HttpServlet {
 
         }
         catch( SQLException e) {
-            e.printStackTrace();
             out.println("<html><body>");
             out.println("<h1>" + e + "</h1>");
             out.println("</body></html>");
@@ -52,7 +51,7 @@ public class AuthorData extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response) throws IOException, ServletException {
 
-        LinkedList<Author> authorList = new LinkedList<Author>();
+        LinkedList<Author> authorList = new LinkedList<>();
         try (Connection conn = DatabaseConnection.initDatabase()){
             Statement statement = conn.createStatement();
             String sqlQuery = "SELECT * from authors";

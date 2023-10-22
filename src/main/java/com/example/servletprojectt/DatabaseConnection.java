@@ -8,8 +8,8 @@ public class DatabaseConnection {
     public static Connection initDatabase() throws SQLException {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-        } catch( ClassNotFoundException ex) {
-            ex.printStackTrace();
+        } catch( ClassNotFoundException e) {
+            System.err.format("Error: %s\n%s", e.getCause(), e.getMessage());
         }
         return DriverManager.getConnection("jdbc:mariadb://localhost:3300/books", "root", "password");
     }

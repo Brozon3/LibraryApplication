@@ -15,25 +15,28 @@ public class Author {
         this.bookList = new ArrayList<>();
     }
 
-    @Override
-    public String toString() {
-        return "Name: " + getName() + "\n" +
-                "Books: " + getBookList();
-    }
-
     public int getAuthorID() {
         return authorID;
     }
 
     public String getName() { return firstName + " " + lastName; }
 
+    public String getFirstName() { return firstName; }
+
+    public String getLastName() { return lastName; }
+
+
     public String getBookList() {
 
-        StringBuilder books = new StringBuilder();
-        for (Book b: this.bookList){
-            books.append(b.getTitle()).append(" || ");
+        if (bookList.isEmpty()){
+            return "";
+        } else {
+            StringBuilder books = new StringBuilder();
+            for (Book b : this.bookList) {
+                books.append(b.getTitle()).append(" || ");
+            }
+            return books.substring(0, books.length() - 4);
         }
-        return books.substring(0, books.length() - 4);
     }
 
     public void addBook(Book book){

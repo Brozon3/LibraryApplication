@@ -23,29 +23,81 @@ public class BookData extends HttpServlet {
         int edition = Integer.parseInt(request.getParameter("edition"));
         String copyright = request.getParameter("copyright");
 
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        LinkedList<Author> authorList = new LinkedList<>();
+        Author existingAuthor = null;
+
+        boolean authorExists = false;
+        boolean bookExists = false;
+
+
         PrintWriter out = response.getWriter();
 
         try (Connection conn = DatabaseConnection.initDatabase()){
 
-            PreparedStatement preparedStatement = conn.prepareStatement(
-                    "INSERT INTO titles (isbn, title, editionNumber, copyright) VALUES (?, ?, ?, ?)");
+            PreparedStatement bookStatement = conn.prepareStatement(
+                    "SELECT * FROM titles WHERE isbn = (?)");
+            bookStatement.setString(1, isbn);
+            ResultSet matchingBook = bookStatement.executeQuery();
 
-            preparedStatement.setString(1, isbn);
-            preparedStatement.setString(2, title);
-            preparedStatement.setInt(3, edition);
-            preparedStatement.setString(4, copyright);
+            if (matchingBook.next()){
+                bookExists = true;
+            }
 
-            preparedStatement.executeQuery();
+            Statement authorStatement = conn.createStatement();
+            String authorQuery = "SELECT * from authors";
+            ResultSet resultSet = authorStatement.executeQuery(authorQuery);
 
-            out.println("<html><body>");
-            out.println("<h1>" + title + " was successfully added to Pat's Library.</h1>");
+            while (resultSet.next()){
+                authorList.add(new Author(resultSet.getInt("authorID"), resultSet.getString("firstName"),
+                                    resultSet.getString("lastName")));
+            }
+
+            for (Author a: authorList){
+                if (a.getFirstName().equals(firstName) && a.getLastName().equals(lastName)) {
+                    existingAuthor = a;
+                    authorExists = true;
+                    break;
+                }
+            }
+
+            if (authorExists && !bookExists){
+                PreparedStatement titlesStatement = conn.prepareStatement(
+                        "INSERT INTO titles (isbn, title, editionNumber, copyright) VALUES (?, ?, ?, ?)"
+                );
+                titlesStatement.setString(1, isbn);
+                titlesStatement.setString(2, title);
+                titlesStatement.setInt(3, edition);
+                titlesStatement.setString(4, copyright);
+                titlesStatement.executeQuery();
+
+                PreparedStatement authorISBNStatement = conn.prepareStatement(
+                        "INSERT INTO authorisbn (authorID, isbn) VALUES (?, ?)"
+                );
+                authorISBNStatement.setInt(1, existingAuthor.getAuthorID());
+                authorISBNStatement.setString(2, isbn);
+                authorISBNStatement.executeQuery();
+
+                out.println("<html><body>");
+                out.println("<h1>" + title + " was successfully added to Pat's Library.</h1>");
+
+            } else if (bookExists) {
+                out.println("<html><body>");
+                out.println("<h1> A book with an ISBN of " + isbn + " already exists.</h1>");
+
+            } else {
+                out.println("<html><body>");
+                out.println("<h1>" + title + " was not added to Pat's Library because " +
+                            firstName + " " + lastName + " could not be found in the authors database. </h1>");
+            }
             out.println("<br>");
             out.println("<a href='index.jsp'>Home</a>");
             out.println("</body></html>");
 
+
         }
         catch( SQLException e) {
-            e.printStackTrace();
             out.println("<html><body>");
             out.println("<h1>" + e + "</h1>");
             out.println("</body></html>");
@@ -56,7 +108,7 @@ public class BookData extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response) throws IOException, ServletException {
 
-        LinkedList<Book> bookList = new LinkedList<Book>();
+        LinkedList<Book> bookList = new LinkedList<>();
         try (Connection conn = DatabaseConnection.initDatabase()){
             Statement statement = conn.createStatement();
             String sqlQuery = "SELECT * from titles";
