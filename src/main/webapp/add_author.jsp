@@ -17,7 +17,8 @@
                         <span class="input-group-text" id="firstName">First Name:</span>
                     </div>
                     <input type="text" name="firstName" class="form-control" placeholder="Joe"
-                           aria-label="First Name" aria-describedby="firstName" required="required">
+                           aria-label="First Name" aria-describedby="firstName" required="required"
+                           maxlength="50" oninvalid="alert('First name must be less than 50 characters long.');">
                 </div>
 
                 <div class="input-group mb-3">
@@ -25,7 +26,8 @@
                         <span class="input-group-text" id="lastName">Last Name:</span>
                     </div>
                     <input type="text" name="lastName" class="form-control" placeholder="Blow"
-                           aria-label="Last Name" aria-describedby="lastName" required="required">
+                           aria-label="Last Name" aria-describedby="lastName" required="required"
+                           maxlength="50" oninvalid="alert('Last name must be less than 50 characters long.');">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
